@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>PicZone - Fryman2599</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .draggable {
+      position: absolute; /* Ensure they can be positioned freely */
+      cursor: grab;
+    }
+    .draggable.front {
+      z-index: 10; /* A high z-index to bring to the front */
+    }
+  </style>
+</head>
+<body>
+<h1>Welcome to the PicZone</h1>
+<p style="color:white;">*Pics might take a sec to load</p>
+<div class="draggable"><img src="DSC00356.JPG"/></div> 
+<div class="draggable"><img src="DSC00602.JPG"/></div> 
+<div class="draggable"><img src="DSC00606.JPG"/></div> 
+<div class="draggable"><img src="DSC00607.JPG"/></div> 
+<div class="draggable"><img src="DSC00629.JPG"/></div> 
+<div class="draggable"><img src="DSC00633.JPG"/></div> 
+<div class="draggable"><img src="DSC00634.JPG"/></div> 
+<div class="draggable"><img src="DSC00665.JPG"/></div> 
+<div class="draggable"><img src="DSC00667.JPG"/></div> 
+<div class="draggable"><img src="DSC00783.JPG"/></div> 
+<div class="draggable"><img src="DSC00789.JPG"/></div> 
+<div class="draggable"><img src="DSC00840.JPG"/></div> 
+<div class="draggable"><img src="DSC00868.JPG"/></div> 
+<div class="draggable"><img src="DSC00993.JPG"/></div> 
+<div class="draggable"><img src="DSC00994.JPG"/></div> 
+<div class="draggable"><img src="DSC00999.JPG"/></div> 
+<div class="draggable"><img src="DSC01000.JPG"/></div> 
+<div class="draggable"><img src="DSC01030.JPG"/></div> 
+<div class="draggable"><img src="DSC01032.JPG"/></div> 
+<div class="draggable"><img src="DSC01033.JPG"/></div> 
+<div class="draggable"><img src="DSC01036.JPG"/></div> 
+<div class="draggable"><img src="DSC01044.JPG"/></div> 
+<div class="draggable"><img src="DSC01049.JPG"/></div> 
+<div class="draggable"><img src="DSC01050.JPG"/></div> 
+<div class="draggable"><img src="DSC01205.JPG"/></div> 
+<div class="draggable"><img src="DSC01225.JPG"/></div> 
+<div class="draggable"><img src="DSC01253.JPG"/></div> 
+<div class="draggable"><img src="DSC01254.JPG"/></div> 
+<div class="draggable"><img src="DSC01258.JPG"/></div> 
+<div class="draggable"><img src="DSC01294.JPG"/></div> 
+<div class="draggable"><img src="DSC01295.JPG"/></div> 
+<div class="draggable"><img src="DSC01312.JPG"/></div> 
+<div class="draggable"><img src="DSC01327.JPG"/></div> 
+<div class="draggable"><img src="DSC01329.JPG"/></div> 
+<div class="draggable"><img src="DSC01330.JPG"/></div> 
+<div class="draggable"><img src="DSC01332.JPG"/></div> 
+<div class="draggable"><img src="DSC01335.JPG"/></div> 
+<div class="draggable"><img src="DSC01342.JPG"/></div> 
+<div class="draggable"><img src="DSC01353.JPG"/></div> 
+<div class="draggable"><img src="DSC01354.JPG"/></div> 
+<div class="draggable"><img src="DSC01366.JPG"/></div> 
+<div class="draggable"><img src="DSC01388.JPG"/></div> 
+<div class="draggable"><img src="DSC01393.JPG"/></div> 
+<div class="draggable"><img src="DSC01408.JPG"/></div> 
+<div class="draggable"><img src="DSC01414.JPG"/></div> 
+<div class="draggable"><img src="DSC01417.JPG"/></div> 
+<div class="draggable"><img src="DSC01439.JPG"/></div> 
+<div class="draggable"><img src="DSC01444.JPG"/></div> 
+<div class="draggable"><img src="DSC01455.JPG"/></div> 
+<div class="draggable"><img src="DSC01468.JPG"/></div> 
+<div class="draggable"><img src="DSC01484.JPG"/></div> 
+<div class="draggable"><img src="DSC01508.JPG"/></div> 
+<div class="draggable"><img src="DSC01522.JPG"/></div> 
+<div class="draggable"><img src="DSC01537.JPG"/></div> 
+<div class="draggable"><img src="DSC01542.JPG"/></div> 
+<div class="draggable"><img src="DSC01587.JPG"/></div> 
+<div class="draggable"><img src="DSC01588.JPG"/></div> 
+<div class="draggable"><img src="DSC01600.JPG"/></div> 
+<div class="draggable"><img src="DSC01604.JPG"/></div> 
+<div class="draggable"><img src="DSC01608.JPG"/></div> 
+<div class="draggable"><img src="DSC01612.JPG"/></div> 
+<div class="draggable"><img src="DSC01613.JPG"/></div> 
+<div class="draggable"><img src="DSC01614.JPG"/></div> 
+<div class="draggable"><img src="DSC01615.JPG"/></div> 
+<div class="draggable"><img src="DSC01616.JPG"/></div> 
+<div class="draggable"><img src="DSC01617.JPG"/></div> 
+<div class="draggable"><img src="DSC01619.JPG"/></div> 
+<div class="draggable"><img src="DSC01627.JPG"/></div> 
+<div class="draggable"><img src="DSC01629.JPG"/></div> 
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+  <script src='https://unpkg.com/draggabilly@3/dist/draggabilly.pkgd.js'></script>
+  <script>
+    $(document).ready(function() {
+  $('.draggable').each(function() {
+    var draggie = new Draggabilly(this);
+  });
+
+  let highestZIndex = 1;
+
+  $('.draggable').on('click', function() {
+    highestZIndex++;
+    $(this).css('z-index', highestZIndex);
+    $(this).addClass('front');
+  });
+});
+  </script>
+  <script src="Scatter.js"></script>
+</body>
+</html>

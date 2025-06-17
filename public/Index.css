@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+body {
+   background-image: url('../Space.jpg');
+   margin: 0;
+}
+
+p,
+h1,
+div {
+   color: black;
+   text-align: center;
+   font-family: 'Nunito', Times;
+}
+
+iframe{
+   border: 0;
+  }
+
+.banner {
+   background-color: RebeccaPurple;
+   margin-bottom: -102px;
+   height:64px;
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 8px;
+   image-rendering: pixelated;
+}
+
+.text-centered {
+   border-collapse: collapse;
+   border-spacing: 0;
+   margin: 0;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.div-text {
+   background-color: BurlyWood;
+   border: 3px solid Sienna;
+   border-radius: 15px;
+   box-sizing: border-box;
+}
+
+.grid-parent {
+   display: grid;
+   grid-template-columns: repeat(7, 180px);
+   grid-template-rows: repeat(7, 180px);
+   gap: 5px;
+   justify-content: center;
+}
+
+.chattable {
+   grid-row: span 2 / span 2;
+   grid-column-start: 3;
+   grid-row-start: 4;
+   height: 365px;
+   width: 180px;
+   border-color:#D3D3FF;
+   background-color:white;
+}
+
+.status-feed {
+   grid-row: span 5 / span 5;
+   grid-column-start: 2;
+   grid-row-start: 2;
+   overflow-y: auto;
+   scrollbar-width: thin;
+   scrollbar-color: rgba(128, 128, 128) transparent;
+}
+
+.welcome {
+   grid-column: span 2 / span 2;
+   grid-column-start: 3;
+   grid-row-start: 2;
+}
+
+.iPod {
+   grid-column-start: 3;
+   grid-row-start: 3;
+   height: 180px;
+   width: 180px;
+}
+
+.Gupta {
+   grid-column-start: 4;
+   grid-row-start: 3;
+   background-color: RebeccaPurple;
+   border-color: orange;
+}
+
+.div6 {
+   grid-row: span 2 / span 2;
+   grid-column-start: 6;
+   grid-row-start: 2;
+}
+
+.BallPit {
+   grid-column: span 2 / span 2;
+   grid-column-start: 5;
+   grid-row-start: 4;
+   width: 365px;
+   height: 180px;
+   background-color: Black;
+   border-radius:15px;
+   border-color: RebeccaPurple;
+}
+
+.boar {
+   grid-column-start: 4;
+   grid-row-start: 6;
+   border-radius: 15px;
+   border-color: orange;
+}
+
+.div9 {
+   grid-column-start: 5;
+   grid-row-start: 5;
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: RebeccaPurple;
+   height: 40px;
+   z-index: 10;
+}
+
+.footer-img-container {
+   white-space: nowrap;
+   position: relative;
+   transform: translateY(-16px);
+   height: 40px;
+}
+
+.footer-img-track {
+   display: inline-flex;
+   white-space: nowrap;
+   animation: scroll-left 38s linear infinite;
+}
+
+.footer-img-container:hover .footer-img-track {
+   animation-play-state: paused;
+}
+
+.footer-img-track a {
+   display: inline-block;
+}
+
+.footer-img-track img {
+   margin-right: 8px;
+   vertical-align: middle;
+}
+
+
+.footer-img-track iframe {
+   width: 88px;
+   height: 31px;
+   margin-right: 8px;
+   vertical-align: middle;
+   border: none;
+}
+
+@keyframes scroll-left {
+   0% {
+      transform: translateX(0%);
+   }
+
+   100% {
+      transform: translateX(-50%);
+   }
+}

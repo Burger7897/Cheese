@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+ h1 {
+   font-family: 'Nunito', serif;
+   color: white;
+   text-align: center;
+ }
+
+ p {
+   text-align: center;
+   font-family: 'Nunito', serif;
+ }
+
+ body {
+   background-image: url('TableCloth.png');
+   overflow-x: hidden;
+ }
+
+
+ img {
+   border: 5px solid #fff;
+   width: 125%;
+   position: absolute;
+ }
+
+.draggable {
+  position:absolute;
+  width: 140px;
+  height: 100px;
+  background: #F90;
+  border-radius: 10px;
+  cursor: move;
+}
+.draggable.is-pointer-down {
+  background: #09F;
+}

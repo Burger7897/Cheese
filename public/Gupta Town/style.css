@@ -1,0 +1,65 @@
+        @font-face {
+            font-family: Cheese;
+            src: url('cheese.ttf');
+        }
+        body {
+            background-image: url("Background.jpg");
+            font-family: "Comic Sans MS", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: orange;
+            color: purple;
+            text-align: center;
+            padding: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        nav {
+            background-color: purple;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 15px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .banner {
+            background-color: orange;
+            color: white;
+            font-weight: bold;
+            padding: 5px;
+            font-size: 16px;
+        }
+        .content {
+            background-color: white;
+            border: 2px solid purple;
+            margin: 20px auto;
+            padding: 20px;
+            width: 70%;
+        }
+        .content h2 {
+            color: purple;
+            border-bottom: 1px solid purple;
+            padding-bottom: 5px;
+        }
+        footer {
+            background-color: purple;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 12px;
+        }
+        img {
+            width: 32%;
+            border: 2px solid purple;
+            margin-top: 10px;
+        }
+        

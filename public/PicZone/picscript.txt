@@ -1,0 +1,5 @@
+@echo off
+> picsown.html (
+    for %%i in (*.jpg) do echo ^<div class="draggable"^>^<img src="%%i"/^>^</div^>
+)
+pause

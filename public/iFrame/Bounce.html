@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bouncing Balls</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url('http://wallpaperswide.com/download/the_blue_marble_earth-wallpaper-640x960.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    canvas {
+      background-color: rgba(255, 255, 255, 0);
+    }
+  </style>
+</head>
+<body>
+  <canvas id="ballCanvas"></canvas>
+  <script>
+    const canvas = document.getElementById('ballCanvas');
+    const ctx = canvas.getContext('2d');
+    const gravity = 0.3;
+    const friction = 0.99;
+    const numBalls = 10;
+    let balls = [];
+    let lastAcceleration = { x: 0, y: 0, z: 0 };
+    const shakeThreshold = 15;
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    function Ball(x, y, radius, color) {
+      this.x = x;
+      this.y = y;
+      this.radius = radius;
+      this.color = color;
+      this.dx = Math.random() * 4 - 2;
+      this.dy = Math.random() * 4 - 2;
+    }
+
+    Ball.prototype.update = function () {
+      this.dy += gravity;
+      this.x += this.dx;
+      this.y += this.dy;
+
+      if (this.x + this.radius > canvas.width) {
+        this.x = canvas.width - this.radius;
+        this.dx = -this.dx * friction;
+      }
+      if (this.x - this.radius < 0) {
+        this.x = this.radius;
+        this.dx = -this.dx * friction;
+      }
+      if (this.y + this.radius > canvas.height) {
+        this.y = canvas.height - this.radius;
+        this.dy = -this.dy * friction;
+      }
+      if (this.y - this.radius < 0) {
+        this.y = this.radius;
+        this.dy = -this.dy * friction;
+      }
+
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      ctx.fillStyle = this.color;
+      ctx.fill();
+      ctx.closePath();
+    };
+
+    function randomRebeccaPurple() {
+      const hue = 270; // fixed hue for purple
+      const sat = Math.random() * 30 + 40; // 40%–70% saturation
+      const light = Math.random() * 20 + 30; // 30%–50% lightness
+      return `hsl(${hue}, ${sat}%, ${light}%)`;
+    }
+
+    function initBalls() {
+      balls = [];
+      for (let i = 0; i < numBalls; i++) {
+        let radius = Math.random() * 10 + 10;
+        let x = Math.random() * (canvas.width - radius * 2) + radius;
+        let y = Math.random() * (canvas.height - radius * 2) + radius;
+        let color = randomRebeccaPurple();
+        balls.push(new Ball(x, y, radius, color));
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let ball of balls) {
+        ball.update();
+      }
+      requestAnimationFrame(animate);
+    }
+
+    function handleShake(event) {
+      let acc = event.accelerationIncludingGravity;
+      let deltaX = Math.abs(acc.x - lastAcceleration.x);
+      let deltaY = Math.abs(acc.y - lastAcceleration.y);
+      let deltaZ = Math.abs(acc.z - lastAcceleration.z);
+
+      if (deltaX + deltaY + deltaZ > shakeThreshold) {
+        balls.forEach(ball => {
+          ball.dx = Math.random() * 10 - 5;
+          ball.dy = Math.random() * 10 - 5;
+        });
+      }
+
+      lastAcceleration = { x: acc.x, y: acc.y, z: acc.z };
+    }
+
+    if (window.DeviceMotionEvent) {
+      window.addEventListener('devicemotion', handleShake);
+    }
+
+    canvas.addEventListener('click', () => {
+      initBalls(); // reset on click
+    });
+
+    initBalls();
+    animate();
+  </script>
+</body>
+</html>
